@@ -1,7 +1,7 @@
-#include <unistd.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #define BIN_PATH "bin/pipe-call/"
 #define CONSUMER_FILE_NAME "consumer"

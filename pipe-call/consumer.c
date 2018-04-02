@@ -7,9 +7,9 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-  int  processed_data;
+  int processed_data;
   char buffer[BUFSIZ + 1];
-  int  file_descriptor;
+  int file_descriptor;
 
   memset(buffer, 0, sizeof(buffer));
 

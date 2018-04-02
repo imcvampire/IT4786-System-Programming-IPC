@@ -4,10 +4,10 @@
 #include <unistd.h>
 
 int main() {
-  int        processed_data;
-  int        file_pipes[2];
+  int processed_data;
+  int file_pipes[2];
   const char some_data[] = "123";
-  char       buffer[BUFSIZ + 1];
+  char buffer[BUFSIZ + 1];
   memset(buffer, 0, sizeof(buffer));
 
   if (pipe(file_pipes) == 0) {

@@ -8,11 +8,11 @@
 #define CONSUMER_FILE_PATH BIN_PATH CONSUMER_FILE_NAME
 
 int main() {
-  int        data_processed;
-  int        file_pipes[2];
+  int data_processed;
+  int file_pipes[2];
   const char some_data[] = "123";
-  pid_t      fork_result;
-  char       buffer[BUFSIZ + 1];
+  pid_t fork_result;
+  char buffer[BUFSIZ + 1];
   memset(buffer, 0, sizeof(buffer));
 
   if (pipe(file_pipes) == 0) {

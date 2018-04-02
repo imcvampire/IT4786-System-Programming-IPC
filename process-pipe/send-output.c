@@ -5,7 +5,7 @@
 
 int main() {
   FILE *f;
-  char  buffer[BUFSIZ + 1];
+  char buffer[BUFSIZ + 1];
   sprintf(buffer, "Hello World!!!!");
   f = popen("cat", "w");
   if (f != NULL) {

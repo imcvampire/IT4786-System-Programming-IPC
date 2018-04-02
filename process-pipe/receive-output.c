@@ -5,8 +5,8 @@
 
 int main() {
   FILE *f;
-  char buffer[BUFSIZ + 1];
-  int chars_read;
+  char  buffer[BUFSIZ + 1];
+  int   chars_read;
 
   memset(buffer, 0, sizeof(buffer));
   f = popen("uname -a", "r");

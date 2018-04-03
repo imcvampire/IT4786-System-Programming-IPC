@@ -27,7 +27,7 @@ send-output: ${PROCESS_PIPE_DIR}/send-output.c
 
 .PHONY: process-pipe receive-output send-output
 
-pipe-call: simple producer-consumer
+pipe-call: simple producer-consumer pipe-as-stdout-stdin
 
 simple: ${PIPE_CALL_DIR}/simple.c
 	${CXX} -o ${OUT_DIR}/${PIPE_CALL_DIR}/simple ${PIPE_CALL_DIR}/simple.c
@@ -36,4 +36,7 @@ producer-consumer: ${PIPE_CALL_DIR}/producer.c ${PIPE_CALL_DIR}/consumer.c
 	${CXX} -o ${OUT_DIR}/${PIPE_CALL_DIR}/producer ${PIPE_CALL_DIR}/producer.c
 	${CXX} -o ${OUT_DIR}/${PIPE_CALL_DIR}/consumer ${PIPE_CALL_DIR}/consumer.c
 
-.PHONY: pipe-call simple producer-consumer
+pipe-as-stdout-stdin: ${PIPE_CALL_DIR}/pipe-as-stdout-stdin.c
+	${CXX} -o ${OUT_DIR}/${PIPE_CALL_DIR}/pipe-as-stdout-stdin ${PIPE_CALL_DIR}/pipe-as-stdout-stdin.c
+
+.PHONY: pipe-call simple producer-consumer pipe-as-stdout-stdin

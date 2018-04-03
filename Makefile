@@ -3,9 +3,10 @@ OUT_DIR=bin
 PROCESS_PIPE_DIR=process-pipe
 PIPE_CALL_DIR=pipe-call
 FIFO_DIR=fifo
+CLIENT_SERVER_DIR=client-server
 MKDIR_P=mkdir -p
 
-all: clean directories process-pipe pipe-call fifo
+all: clean directories process-pipe pipe-call fifo client-server
 
 directories: ${OUT_DIR}
 
@@ -14,6 +15,7 @@ ${OUT_DIR}:
 	${MKDIR_P} ${OUT_DIR}/${PROCESS_PIPE_DIR}
 	${MKDIR_P} ${OUT_DIR}/${PIPE_CALL_DIR}
 	${MKDIR_P} ${OUT_DIR}/${FIFO_DIR}
+	${MKDIR_P} ${OUT_DIR}/${CLIENT_SERVER_DIR}
 
 clean:
 	rm -rf $(OUT_DIR)
@@ -56,3 +58,9 @@ fifo-producer-consumer: ${FIFO_DIR}/producer.c ${FIFO_DIR}/consumer.c
 	${CXX} -o ${OUT_DIR}/${FIFO_DIR}/consumer ${FIFO_DIR}/consumer.c
 
 .PHONY: fifo create open fifo-producer-consumer
+
+client-server: ${CLIENT_SERVER_DIR}/client.c ${CLIENT_SERVER_DIR}/server.c
+	${CXX} -o ${OUT_DIR}/${CLIENT_SERVER_DIR}/client ${CLIENT_SERVER_DIR}/client.c
+	${CXX} -o ${OUT_DIR}/${CLIENT_SERVER_DIR}/server ${CLIENT_SERVER_DIR}/server.c
+
+.PHONY: client-server

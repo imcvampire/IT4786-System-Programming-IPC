@@ -15,6 +15,8 @@ int main() {
     return EXIT_FAILURE;
   }
 
+  sleep(10);
+
   do {
     read_res = read(server_fifo_fd, &my_data, sizeof(my_data));
     if (read_res > 0) {

@@ -31,7 +31,7 @@ send-output: ${PROCESS_PIPE_DIR}/send-output.c
 
 .PHONY: process-pipe receive-output send-output
 
-pipe-call: simple producer-consumer pipe-as-stdout-stdin
+pipe-call: simple pipe-producer-consumer pipe-as-stdout-stdin
 
 simple: ${PIPE_CALL_DIR}/simple.c
 	${CXX} -o ${OUT_DIR}/${PIPE_CALL_DIR}/simple ${PIPE_CALL_DIR}/simple.c
